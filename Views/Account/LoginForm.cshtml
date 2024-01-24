@@ -1,0 +1,46 @@
+@model MahalCoffee.Models.Admin
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "_Layout";
+}
+
+<h2>Login</h2>
+@Html.AntiForgeryToken()
+
+<section class="login-form" id="login">
+    <h1 class="heading">Login <span>Sign in to your account</span></h1>
+
+    <form asp-action="LoginForm" asp-controller="Account" method="post" onsubmit="return validateForm()">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <label asp-for="EmailAddress"></label>
+            <input asp-for="EmailAddress" class="input-box" />
+            <span asp-validation-for="EmailAddress" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <input asp-for="Password" type="password" class="input-box" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Login" class="btn" />
+        </div>
+    </form>
+
+    <script>
+        function validateForm() {
+            var email = document.getElementById("EmailAddress").value;
+            var password = document.getElementById("Password").value;
+
+            if (!email || !password) {
+                alert("Please fill in all fields.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</section>

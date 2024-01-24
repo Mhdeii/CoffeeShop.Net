@@ -1,0 +1,34 @@
+.add-coffee-form {
+    background: url(../image/book-bg.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.add-coffee-form form {
+    margin: 0 auto 2rem auto;
+    max-width: 60rem;
+    border-radius: var(--border-radius-hover);
+    padding: 3rem;
+    border: var(--border);
+}
+
+.add-coffee-form .input-box {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    background: none;
+    text-transform: none;
+    color: var(--main-color);
+    border: var(--border);
+    margin: .7rem 0;
+}
+
+.add-coffee-form .input-box:focus {
+    border: var(--border-hover);
+}
+
+.add-coffee-form textarea {
+    height: 15rem;
+    resize: none;
+}

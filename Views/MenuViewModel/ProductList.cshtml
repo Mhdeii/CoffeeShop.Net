@@ -1,0 +1,38 @@
+@using System.Collections
+@model MenuView
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+@{
+    ViewBag.Title = "Product List";
+    Layout = "_Layout";
+}
+
+<section>
+    <h1 class="heading">Product List</h1>
+
+    <table style="margin: 0 auto; margin-top: 45px; font-size: 24px;
+        display: flex; flex-direction: column; justify-content: space-between;
+        width: 60%;">
+        <thead style="margin-bottom: 30px;">
+            <tr style="display: flex; justify-content: space-between; margin-right: 75px;">
+                <th>Image</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.Products)
+            {
+                <tr style="display: flex; justify-content: space-between;">
+                    <td style="width: 7%; height: 7%; margin-bottom: 30px;">
+                        <img src="@(Url.Content(product.ImageUrl))" alt="@product.Name"  class="img-circle elevation-2">
+                    </td>
+                    <td>@product.Name</td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

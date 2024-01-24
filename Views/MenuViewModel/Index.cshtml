@@ -1,0 +1,21 @@
+@*@model List<Product>
+<link rel="stylesheet" href="Project_web/Project_web/wwwroot/css/menu.css">
+@{
+    ViewData["Title"] = "Our Menu";
+}
+
+<h1 class="heading">Menu<span>popular menu</span></h1>
+
+<div class="box-container">
+    @foreach (var product in Product )
+    {
+        <a href="#" class="box">
+            <img src="@product.ImageUrl" alt="">
+            <div class="content">
+                <h3>@product.Name</h3>
+                <p>@product.Description</p>
+                <span>$@product.Price</span>
+            </div>
+        </a>
+    }
+</div>*@

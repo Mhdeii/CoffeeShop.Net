@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/MahalCoffee_CSC400.props" />
+</Project>

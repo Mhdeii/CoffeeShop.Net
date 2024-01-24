@@ -1,0 +1,32 @@
+@model IEnumerable<MahalCoffee_CSC400.Models.Product>
+<link rel="stylesheet" href="~/wwwroot/css/menu.css"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+@{
+    ViewBag.Title = "MenuViewModel";
+    Layout = "_Layout";
+}
+
+<section class="menu" id="menu">
+    <h1 class="heading">Our Menu <span>Popular Menu</span></h1>
+
+    <div class="box-container">
+        @foreach (var product in Model)
+        {
+            <div class="box">
+                <img src=@Url.Content(product.ImageUrl) alt="@product.Name"  style="border-radius: 50px">
+                <div class="content">
+                    <h3>@product.Name</h3>
+                    <p>@product.Description</p>
+                    <span>$@product.Price</span>
+                    <div class="icons">
+                        <a asp-action="Edit" asp-controller="Product" asp-route-id="@product.ProductId"><i class="fas fa-edit edit-icon" title="Edit"></i></a>
+<a asp-action="DeletePost" asp-controller="Product" asp-route-id="@product.ProductId" onclick="return confirm('Are you sure you want to delete this product?');">
+    <i class="fas fa-trash-alt delete-icon" title="Delete"></i>
+</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>

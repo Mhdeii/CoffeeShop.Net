@@ -1,0 +1,54 @@
+/* admin-style.css */
+
+/* Navbar styles */
+.navbar {
+    background-color: #343a40; /* Dark background color */
+}
+
+.navbar-brand {
+    color: #ffffff; /* White text color for brand */
+}
+
+.navbar-toggler-icon {
+    color: #ffffff; /* White color for the toggler icon */
+}
+
+/* Offcanvas styles */
+.offcanvas-header {
+    background-color: #343a40; /* Dark background color for offcanvas header */
+    color: #ffffff; /* White text color for offcanvas header */
+}
+
+.offcanvas-title {
+    color: #ffffff; /* White text color for offcanvas title */
+}
+
+.offcanvas-body {
+    background-color: #f8f9fa; /* Light background color for offcanvas body */
+}
+
+/* Navbar links */
+.navbar-nav .nav-link {
+    color: #ffffff; /* White text color for navbar links */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Search form */
+.form-control {
+    width: 200px; /* Set width for the search input */
+}
+
+/* Button styles */
+.btn-outline-success {
+    color: #28a745; /* Text color for the success outline button */
+    border-color: #28a745; /* Border color for the success outline button */
+}
+
+.btn-outline-success:hover {
+    color: #ffffff; /* Text color on hover */
+    background-color: #28a745; /* Background color on hover */
+    border-color: #28a745; /* Border color on hover */
+}

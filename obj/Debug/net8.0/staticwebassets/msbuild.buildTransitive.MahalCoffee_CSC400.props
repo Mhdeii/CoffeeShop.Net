@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/MahalCoffee_CSC400.props" />
+</Project>

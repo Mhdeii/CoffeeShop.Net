@@ -1,0 +1,155 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <title>@ViewData["Title"] Mahal Coffee</title>
+    
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/createProduct.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/menu.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="editProduct.css" asp-append-version="true"/>
+    @*<link rel="stylesheet" href="~/MahalCoffee.styles.css" asp-append-version="true"/>*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="...">
+
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    
+    <!-- Font Awesome CDN Link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+
+     
+    <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+    
+        <img src="IMG_2577.PNG" alt="MAHAL Coffee Logo" style="max-width: 80px; height: auto; float: left;">
+    
+        <nav class="navbar">
+            <a asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-controller="MenuViewModel" asp-action="MenuViewModel">Menu</a>
+            <a asp-controller="Review" asp-action="Index">Reviews</a>
+            <a asp-controller="Product" asp-action="Create">Barista</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Account" asp-action="Register">
+                        Register
+                    </a>
+                </li>
+            </ul>
+            
+            
+<div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <li class="nav-item">
+                <form method="post" asp-controller="Account" asp-action="Logout">
+                    <button type="submit" style="width:auto"
+                            class="nav-link btn btn-link py-0">
+                        Logout @User.Identity.Name
+                    </button>
+                </form>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="account" asp-action="register">
+                    Register
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Account" asp-action="LoginForm">
+                    Login
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+        </nav>
+        <btn>
+        <a asp-controller="Admin" asp-action="Dashboard" class="btn">
+            <i class="fas fa-tachometer-alt"></i> Dashboard
+        </a>
+        
+            <a asp-controller="Account" asp-action="LoginForm" class="btn">
+            <i class="fas fa-sign-in-alt"></i> Login
+        </a>
+        </btn>
+                    
+        
+    </header>
+
+
+
+
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+@*
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2023 - Project_web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </div>
+</footer>*@
+
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>our branches</h3>
+            <a href="#"><i class="fas fa-arrow-right"></i> india</a>
+            <a href="#"><i class="fas fa-arrow-right"></i> USA</a>
+            <a href="#"><i class="fas fa-arrow-right"></i> france</a>
+            <a href="#"><i class="fas fa-arrow-right"></i> africa</a>
+            <a href="#"><i class="fas fa-arrow-right"></i> japan</a>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#home"><i class="fas fa-arrow-right"></i> home</a>
+            <a href="#about"><i class="fas fa-arrow-right"></i> about</a>
+            <a href="#menu"><i class="fas fa-arrow-right"></i> menu</a>
+            <a href="#review"><i class="fas fa-arrow-right"></i> review</a>
+            <a href="#book"><i class="fas fa-arrow-right"></i> book</a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"><i class="fas fa-phone"></i> +123-456-7890</a>
+            <a href="#"><i class="fas fa-phone"></i> +111-222-3333</a>
+            <a href="#"><i class="fas fa-envelope"></i> coffee@gmail.com</a>
+            <a href="#"><i class="fas fa-envelope"></i> Perú, Lima</a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"><i class="fab fa-facebook-f"></i> facebook</a>
+            <a href="#"><i class="fab fa-twitter"></i> twitter</a>
+            <a href="#"><i class="fab fa-instagram"></i> instagram</a>
+            <a href="#"><i class="fab fa-linkedin"></i> linkedin</a>
+            <a href="#"><i class="fab fa-twitter"></i> twitter</a>
+        </div>
+    </div>
+</section> 
+            
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

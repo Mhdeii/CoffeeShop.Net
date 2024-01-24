@@ -1,0 +1,55 @@
+/* USER REGISTRATION */
+.login-form {
+    background: url(../image/book-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    font-family: Arial, sans-serif; /* Set the desired font-family */
+}
+
+.login-form form {
+    margin: 0 auto 2rem auto;
+    max-width: 60rem;
+    border-radius: var(--border-radius-hover);
+    padding: 3rem;
+    border: var(--border);
+    background-color: #fff; /* Set background color */
+}
+
+.login-form .input-box {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    background: none;
+    text-transform: none;
+    color: #3498db; /* Adjust the color as needed */
+    border: 1px solid #ccc; /* Set border color */
+    margin: .7rem 0;
+}
+
+.login-form .input-box:focus {
+    border: 1px solid #3498db; /* Set border color on focus */
+}
+
+.login-form textarea {
+    height: 15rem;
+    resize: none;
+}
+
+.btn {
+    background-color: #3498db; /* Set button background color */
+    color: #fff; /* Set button text color */
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+}
+
+.btn:hover {
+    background-color: #2980b9; /* Set button background color on hover */
+}
+
+.text-danger {
+    color: #d9534f; /* Set text danger color */
+}

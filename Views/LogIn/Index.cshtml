@@ -1,0 +1,30 @@
+@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>title</h2>
+<section class="login-form" id="login">
+    <h1 class="heading">login <span>sign in to your account</span></h1>
+
+    <form action="" onsubmit="return validateForm()">
+        <input type="email" id="email" placeholder="Email" class="input-box">
+        <input type="password" id="password" placeholder="Password" class="input-box">
+        <input type="submit" value="Login" class="btn">
+    </form>
+
+    <script>
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            if (!email || !password) {
+                alert("Please fill in all fields.");
+                return false; 
+            }
+            return true; 
+        }
+    </script>
+</section>

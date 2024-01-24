@@ -1,0 +1,49 @@
+@model MahalCoffee_CSC400.Models.Product
+<link rel="stylesheet" href="~/css/createProduct.css">
+
+@{
+    ViewBag.Title = "Create Product";
+    Layout = "_Layout";
+}
+
+
+
+
+<section class="add-coffee-form" id="add-coffee">
+    <h1 class="heading">Create Coffee<span>Provide details for the new coffee</span></h1>
+    <input type="hidden" asp-for="ProductId" />
+    <input type="hidden" asp-for="BaristaId" />
+    <input type="hidden" asp-for="Barista" />
+    <input type="hidden" asp-for="MenuViewId" />
+    <input type="hidden" asp-for="MenuView" />
+    <input type="hidden" asp-for="ProductIngredients" />
+
+    <form method="post" asp-action="create" asp-controller="Product" enctype="multipart/form-data">
+        <div class="row g-2">
+            <div class="col-md">
+                <label asp-for="Name" class="form-label">Name</label>
+                <input asp-for="Name" class="input-box form-control" />
+            </div>
+            <div class="col-md">
+                <label asp-for="ImageUrl" class="form-label">Image URL</label>
+                <input asp-for="ImageUrl" class="input-box form-control" />
+            </div>
+        </div>
+        
+        <div class="row g-2">
+            <div class="col-md">
+                <label asp-for="Description" class="form-label">Description</label>
+                <textarea asp-for="Description" class="input-box form-control" rows="3"></textarea>
+            </div>
+            <div class="col-md">
+                <label asp-for="Price" class="form-label">Price</label>
+                <input asp-for="Price" class="input-box form-control" />
+            </div>
+        </div>
+
+        <div class="mb-3">
+          <button type="submit" class="btn btn-success">Add Coffee</button>
+        </div>
+    </form>
+
+</section>

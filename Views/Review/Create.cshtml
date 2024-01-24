@@ -1,0 +1,38 @@
+@model MahalCoffee.Models.Review
+<link rel="stylesheet" href="~/css/createReview.css">
+
+@{
+    ViewBag.Title = "Create Review";
+    Layout = "_Layout";
+}
+
+<section class="add-review-form" id="add-review">
+    <h1 class="heading">Create Review<span>Provide details for the new review</span></h1>
+
+    <form method="post" asp-action="Create" asp-controller="Review">
+        <div class="form-group">
+            <label asp-for="Comment" class="form-label">Comment</label>
+            <textarea asp-for="Comment" class="input-box form-control" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Rating" class="form-label">Rating</label>
+            <input asp-for="Rating" class="input-box form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Customer" class="form-label">Customer Name</label>
+            <input asp-for="Customer" class="input-box form-control" />
+        </div>
+        @*
+        <div class="form-group">
+            <label asp-for="ImageUrl" class="form-label">Enter ImageUrl</label>
+            <input asp-for="ImageUrl" class="input-box form-control" />
+                </div>
+                *@
+
+        <div class="mb-3">
+            <a asp-action="Index" asp-controller="Review" class="btn btn-success">Submit</a>
+        </div>
+    </form>
+</section>

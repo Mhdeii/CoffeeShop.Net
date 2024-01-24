@@ -1,0 +1,47 @@
+/* createBarista.css */
+
+body {
+    background: url(../image/book-bg.jpg) center/cover;
+}
+
+h1 {
+    margin-top: 76px;
+    text-align: center;
+    color: var(--main-color); /* Adjust as needed */
+}
+
+form {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 3rem;
+    border-radius: var(--border-radius-hover);
+    border: var(--border);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-size: 1.6rem; /* Adjust as needed */
+}
+
+.form-control {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    background: none;
+    color: var(--main-color);
+    border: var(--border);
+    margin-bottom: .7rem;
+}
+
+.form-control:focus {
+    border: var(--border-hover);
+}
+
+.btn-primary {
+    /* Add any additional styling for the submit button if needed */
+}

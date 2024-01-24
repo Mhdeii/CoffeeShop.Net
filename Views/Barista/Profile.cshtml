@@ -1,0 +1,25 @@
+@model  Barista
+
+<link rel="stylesheet" href="~/css/baristaProfile.css">
+@{
+    ViewBag.Title = "Hotels";
+    Layout = "_Layout";
+}
+
+<div class="row g-3">
+    <div class="col-md-4">
+        <div class="card-body">
+            <h1 class="card-title">@Model.FirstName + @Model.LastName</h1>
+            <p class="card-text"> <strong>Phone number</strong> 
+                <br/>
+                @Model.PhoneNumber
+            </p>
+            <span class="card-text"><strong>Email Address </strong> </span>
+            <span class="card-text">@Model.EmailAddress</span>
+        </div>
+    </div>
+    
+    <div class="col-md-4 d-flex align-items-center justify-content-end">
+        <img src="/image/pic-1.png" class="img-fluid rounded-start" alt="@Model.FirstName" >
+    </div>
+</div>
